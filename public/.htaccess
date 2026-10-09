@@ -1,0 +1,29 @@
+# Success Drive website (GreenGeeks / Apache)
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+# www -> bare domain (https itself is forced by Cloudflare "Always Use HTTPS")
+RewriteCond %{HTTP_HOST} ^www\.thesuccessdrive\.com$ [NC]
+RewriteRule ^ https://thesuccessdrive.com%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/webp "access plus 1 month"
+ExpiresByType image/jpeg "access plus 1 month"
+ExpiresByType image/png "access plus 1 month"
+ExpiresByType font/woff2 "access plus 1 year"
+ExpiresByType text/css "access plus 1 year"
+ExpiresByType application/javascript "access plus 1 year"
+ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml application/xml text/plain
+</IfModule>
+
+AddType image/webp .webp
+AddType font/woff2 .woff2

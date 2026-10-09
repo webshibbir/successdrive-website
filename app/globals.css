@@ -1,0 +1,5 @@
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { margin: 0; padding: 0; }
+body { background: #fafafa; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+img { max-width: 100%; }
