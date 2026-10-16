@@ -78,7 +78,7 @@ function SideCta({ appUrl, label }: { appUrl: string; label: string }) {
   );
 }
 
-// appUrl: where the app lives (login / sign-up), e.g. https://app.thesuccessit.com. Empty = same site.
+// appUrl: where the app lives (login / sign-up), e.g. https://app.thesuccessdrive.com. Empty = same site.
 export function Landing({ appUrl = "" }: { appUrl?: string }) {
   return (
     <div className={`${s.page} ${landingFonts}`}>
